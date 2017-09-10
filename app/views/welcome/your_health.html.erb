@@ -1,0 +1,88 @@
+<div id="main-content">
+  <div class="trainings index">
+
+    <section class="white-section">
+      <div class="container">
+        <div class="col-md-12">
+          <div class="h2 margin-b-20"><%= t('take_care_heart') %></div>
+          <div class="h3"><%= t('know_risks') %></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="white-section">
+      <div class="container">
+        <div class="col-md-4">
+          <div class="risk-img-container">
+            <div class="h3 lightred-color"><%= t('chol_and_mass_level') %></div>
+            <%= image_tag 'risk3_risk 3.svg' %>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="risk-img-container">
+            <div class="h3 lightred-color"><%= t('gluc_level') %></div>
+            <%= image_tag 'risk2_risk 2.svg' %>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="risk-img-container">
+            <div class="h3 lightred-color margin-b-20"><%= t('arter_level') %></div>
+            <%= image_tag 'risk1_risk 1.svg' %>
+          </div>
+        </div>
+        <div class="col-sm-12 margin-t-20">
+          <div class="h5 text-center deepred-color"><%= t('pass_it_to_yours') %></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grey-section">
+      <div class="container">
+        <div class="col-sm-12">
+          <div class="h3 text-center margin-b-20"><%= t('start_now_checking_imt_html') %></div>
+        </div>
+        <div class="col-sm-offset-4 col-sm-4 imt-form">
+          <div class="form-group">
+            <%= text_field_tag :mass, nil, placeholder: t('mass_kg'), class: 'form-control', autofocus: true %>
+          </div>
+
+          <div class="form-group">
+            <%= text_field_tag :height, nil, placeholder: t('height_cm'), class: 'form-control', autofocus: true %>
+          </div>
+
+          <div class="actions text-center">
+            <%= submit_tag t('calculate_imt'), class: 'btnn btnn-green text-uppercase', data: { toggle: "modal", target: "#myModal" } %>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="white-section">
+      <div class="container">
+        <div class="col-md-12 text-center">
+          <p><b><%= t('know_risks_bla_bla_html') %></b></p>
+          <p><b><%= t('force_in_knowledge') %></b></p>
+        </div>
+      </div>
+    </section>
+
+    <%= render 'shared/news_form' %>
+
+  </div>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Результати</h4>
+      </div>
+      <div class="modal-body imt-result">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Закрити</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

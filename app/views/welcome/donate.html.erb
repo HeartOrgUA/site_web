@@ -1,0 +1,121 @@
+<div id="main-content">
+  <div class="donate">
+
+    <section class="white-section back-img">
+      <div class="container">
+        <div class="h1"><%= t('your_help_is_important') %></div>
+        <div class="row">
+          <div class="col-sm-8">
+            <%= content_tag :div, t('training_proposal_html'), class: 'margin-t-20' %>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grey-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 padding-5-sides">
+            <div class="help-option">
+              <div class="help-option-title">
+                <%= t('help_us_as_volunteer') %>
+              </div>
+              <div class="help-option-btn text-center">
+                <%= link_to t('become_volunteer'), '#', class: 'btnn btnn-red btnn-wo-rad text-uppercase padding-10-tops' %>
+              </div>
+              <div class="help-option-why text-center">
+                <%= t('become_volunteer_advantages') %>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 padding-5-sides">
+            <div class="help-option">
+              <div class="help-option-title">
+                <%= t('get_certification') %>
+              </div>
+              <div class="help-option-btn text-center">
+                <%= link_to t('select_training'), '#', class: 'btnn btnn-red btnn-wo-rad text-uppercase padding-10-tops' %>
+              </div>
+              <div class="help-option-why text-center">
+                <%= t('select_training_advantages') %>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 padding-5-sides">
+            <div class="help-option">
+              <div class="help-option-title">
+                <%= t('get_our_partner') %>
+              </div>
+              <div class="help-option-btn text-center">
+                <%= link_to t('getting_partner'), '#', class: 'btnn btnn-red btnn-wo-rad text-uppercase padding-10-tops' %>
+              </div>
+              <div class="help-option-why text-center">
+                <%= t('getting_partner_advantages') %>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="h4 lightgrey-color margin-v-20"><%= t('or_help_with_donate') %></div>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="margin-b-20">
+              <span class="sh3">
+                <%= t('we_dont_know_your_whys') %>
+              </span>
+            </div>
+
+            <p>
+              <%= link_to '#', class: 'btnn btnn-green text-uppercase btnn-wo-rad' do %>
+                <span class="fa fa-credit-card-alt margin-r-5"></span> <small><%= t('onetime_help') %></small>
+              <% end %>
+            </p>
+
+            <p class="payment-descr">
+              <%= t('payment_description_html') %>
+            </p>
+
+            <div class="margin-v-20">
+              <span class="sh3">
+                <%= t('where_do_money_go') %>
+              </span>
+            </div>
+
+            <p class="cash-flow-descr">
+              <%= t('cash_flow_1_html') %>
+            </p>
+
+            <p class="cash-flow-descr">
+              <%= t('cash_flow_2_html') %>
+            </p>
+          </div>
+
+          <div class="col-lg-offset-1 col-lg-5 col-sm-6">
+            <div class="donate-requisites">
+              <div class="req-name">
+                <%= t('uha_requisites_html') %>
+              </div>
+              <p class="req">
+                <%= t('uha_req_1') %><br>
+                <%= t('uha_req_2') %><br>
+                <%= t('uha_req_3') %><br>
+                <%= t('uha_req_4') %><br>
+                <%= t('uha_req_5') %><br>
+              </p>
+            </div>
+
+            <p class="subcontacts">
+              <span class="descr"><%= t('contact_us') %></span><br>
+              <span class="value">+380 99 999 99 99</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <%= render 'shared/news_form' %>
+  </div>
+</div>

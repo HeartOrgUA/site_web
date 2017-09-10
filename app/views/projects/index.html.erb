@@ -1,0 +1,60 @@
+<div id="main-content">
+  <div class="projects index">
+
+    <section class="white-section">
+      <div class="container">
+        <div class="col-sm-12">
+          <div class="h2 margin-b-20"><%= t('our_projects') %></div>
+        </div>
+        <div class="col-md-6">
+          <div class="deepgrey-color">
+            <p><%= t('intro_project_1') %></p>
+            <p><%= t('intro_project_2') %></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="clearfix"></div>
+
+      <div class="container">
+        <div class="collection">
+          <% @projects.each do |project| %>
+            <div class="col-md-6">
+              <%= link_to project_link(project.canonical_name) do %>
+                <div class="inner-item" <%= 'data-turbolinks=false' if project.canonical_name == 'aed' %>>
+                  <div class="panel panel-default">
+                    <div class="panel-heading text-center" style="background-image: url('<%= project.image.url %>');">
+                      <div class="dimmer"></div>
+                      <div class="tabl">
+                        <div>
+                          <div>
+                            <%= content_tag(:span, project.name, class: 'name') %>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel-body">
+                      <%= content_tag(:p, truncate(project.description, length: 250, separator: ' '), class: 'content') %>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+
+          <div class="col-md-6">
+            <div class="submit-project">
+              <div class="collection text-center">
+                <p class="content"><%= t('submit_project_text') %></p>
+                <%= link_to t('submit_project'), '#', class: 'btnn btnn-rounded btnn-lightred-void text-uppercase' %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <%= render 'shared/news_form' %>
+
+  </div>
+</div>

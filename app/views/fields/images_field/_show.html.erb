@@ -1,0 +1,5 @@
+<% if field.data.present? %>
+  <% field.data.each do |image| %>
+    <%= image_tag image.url, style: 'width: 150px;' %>
+  <% end %>
+<% end %>

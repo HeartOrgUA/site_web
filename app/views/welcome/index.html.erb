@@ -1,0 +1,107 @@
+<div id="main-content">
+  <div class="welcome">
+
+    <section class="intro">
+      <div class="text-container">
+        <div class="container">
+          <div class="intro-text"><%= t('we_are_on_front_html') %></div>
+          <div class="who-we-are lightred-back">
+            <%= content_tag :span, t('we_are_uha_html'), class: 'highlighted-h1' %>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro-options">
+      <div class="intro-options-container-sm hidden-lg">
+        <div class="container-fluid">
+          <div class="row">
+            <%= link_to '#' do %>
+              <div class="option-sm col-xs-6 text-center deepgrey-back text-uppercase">
+                <table><tr>
+                  <td><%= t('about_us') %></td>
+                </tr></table>
+              </div>
+            <% end %>
+            <%= link_to '#' do %>
+              <div class="option-sm col-xs-6 text-center lightred-back text-uppercase">
+                <table><tr>
+                  <td><%= t('how_to_help') %></td>
+                </tr></table>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <div class="intro-options-container visible-lg-block">
+        <div class="container-fluid">
+          <div class="col-lg-4 option">
+            <%= link_to trainings_path do %>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <div class="intro-text text-center"><%= t('start_study') %></div>
+                </div>
+                <div class="panel-body text-center">
+                  <%= t('start_study_text') %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+          <div class="col-lg-4 option">
+            <%= link_to volonteer_path do %>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <div class="intro-text text-center"><%= t('become_volunteer') %></div>
+                </div>
+                <div class="panel-body text-center">
+                  <%= t('become_volunteer_text') %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+          <div class="col-lg-4 option">
+            <%= link_to donate_path do %>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <div class="intro-text text-center"><%= t('help_another_way') %></div>
+                </div>
+                <div class="panel-body text-center">
+                  <%= t('help_another_way_text') %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="banner">
+      <div class="banner-content">
+        <div class="container-fluid">
+          <div class="col-sm-12">
+            <%= link_to aeds_path do %>
+              <div class="inner-item">
+                <span class="banner-text"><%= t('banner_text_html') %></span>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="collection">
+      <div class="news-content">
+        <div class="container-fluid">
+          <%= render 'news/news', news: @news, pagination_enabled: false %>
+        </div>
+        <div class="more-news text-center">
+          <%= link_to t('more_news'), news_index_path, class: 'btnn btnn-white' %>
+        </div>
+      </div>
+    </section>
+
+    <%= render 'shared/news_form' %>
+
+  </div>
+</div>

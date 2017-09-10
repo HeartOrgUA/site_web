@@ -1,0 +1,25 @@
+<div id="main-content">
+  <div class="news index">
+
+    <section class="filters">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-12">
+            <%= render 'tags_filter' %>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="white-section">
+      <div class="container-fluid">
+        <div class="collection">
+          <%= render 'news', news: @news, pagination_enabled: true %>
+        </div>
+      </div>
+    </section>
+
+    <%= render 'shared/news_form' %>
+
+  </div>
+</div>

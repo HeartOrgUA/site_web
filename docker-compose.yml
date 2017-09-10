@@ -1,0 +1,27 @@
+rails_dev:
+  build: .
+  command: "sh deploy.sh"
+
+  ports:
+   - "3000:3000"
+
+  volumes:
+   - .:/project
+
+  links:
+   - postgres_dev
+
+  environment:
+    RDS_USERNAME: "admin"
+    RDS_PASSWORD: "root"
+    RDS_HOSTNAME: "postgres_dev"
+
+postgres_dev:
+  image: postgres:9.5
+  volumes:
+   - healthapp_postgres_dev_9_5:/var/lib/postgresql/data
+  ports:
+   - "5432:5432"
+  environment:
+    POSTGRES_PASSWORD: "root"
+    POSTGRES_USER: "admin"

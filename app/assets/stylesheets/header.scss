@@ -1,0 +1,239 @@
+.header-fixed {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  background-color: #fff;
+  box-shadow:0 1px 1px #ccc;
+  padding: 20px 0px;
+  height: 80px;
+  color: #111;
+  box-sizing: border-box;
+  top:-100px;
+
+  -webkit-transition:top 0.3s;
+  transition:top 0.3s;
+}
+
+.header-fixed .header-limiter {
+  max-width: 1200px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.header-fixed-placeholder{
+  height: 80px;
+  display: none;
+}
+
+/* Logo */
+
+.header-fixed .header-limiter .logo {
+  float: left;
+  font-weight: 400;
+  line-height: 40px;
+  margin-top: -10px;
+  padding-right: 15px;
+  border-right: 1px solid #ddd;
+  img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+body.fixed .header-fixed .header-limiter .logo {
+  margin-top: -6px;
+  img {
+    width: 33px;
+    height: 33px;
+  }
+}
+
+/* The navigation links */
+
+.header-fixed .header-limiter a {
+  color: #111;
+  text-decoration: none;
+}
+
+.header-fixed .header-limiter nav {
+  line-height: 40px;
+  float: left;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding-left: 20px;
+}
+
+.header-fixed .header-limiter nav a{
+  display: inline-block;
+  padding: 0 5px;
+  text-decoration:none;
+  color: #111;
+  opacity: 0.9;
+}
+
+.header-fixed .header-limiter nav a:hover{
+  opacity: 1;
+  color: #7ec0ee;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.header-fixed .header-limiter nav a.selected {
+  color: #608bd2;
+  pointer-events: none;
+  opacity: 1;
+}
+
+/* Fixed version of the header */
+
+body.fixed .header-fixed {
+  padding: 10px 40px;
+  height: 50px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+body.fixed .header-fixed-placeholder {
+  display: block;
+}
+
+body.fixed .header-fixed .header-limiter nav {
+  line-height: 28px;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+/* The search box */
+
+.header-fixed .header-limiter .search-nav {
+  float: right;
+  padding-right: 10px;
+  padding-top: 10px;
+  border-right: 1px solid #ddd;
+  height: 60px;
+  margin-top: -10px;
+  input {
+    padding: 11px 12px 9px;
+    width: 170px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    height: 35px;
+    box-sizing: border-box;
+  }
+}
+
+.header-fixed .header-limiter .social-nav {
+  float: right;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 18px;
+  border-right: 1px solid #ddd;
+  height: 60px;
+  margin-top: -10px;
+  font-size: 20px;
+  a {
+    color: #aaa;
+    margin-right: 10px;
+  }
+  a {
+    .fa-facebook:hover {
+      color: #3b5998;
+    }
+    .fa-twitter:hover {
+      color: #4099FF;
+    }
+    .fa-youtube:hover {
+      color: #e52d27;
+    }
+    .fa-instagram:hover {
+      color: #3b5998;
+    }
+    .fa-linkedin:hover {
+      color: #0077b5;
+    }
+  }
+}
+
+.header-fixed .header-limiter .locale-nav {
+  float: right;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
+  height: 60px;
+  margin-top: -10px;
+  font-size: 30px;
+  border-right: 1px solid #ddd;
+  a {
+    color: #aaa;
+    &:hover {
+      color: #7ec0ee;
+    }
+  }
+}
+
+.header-fixed .header-limiter .profile-nav {
+  float: right;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 18px;
+  height: 60px;
+  margin-top: -15px;
+  font-size: 20px;
+  a {
+    color: #aaa;
+    &:hover {
+      color: #000;
+    }
+  }
+}
+
+body.fixed .header-fixed .header-limiter {
+  .search-nav, .social-nav, .profile-nav, .locale-nav {
+    height: 40px;
+    margin-top: -5px;
+    padding-top: 7px;
+    input {
+      padding: 11px 12px 9px;
+      width: 170px;
+      border: none;
+      border-bottom: 1px solid #ddd;
+      height: 30px;
+      box-sizing: border-box;
+    }
+  }
+
+  .locale-nav {
+    font-size: 26px;
+    padding-top: 2px;
+  }
+  .profile-nav {
+    font-size: 18px;
+    padding-top: 3px;
+  }
+}
+
+/* Making the header responsive */
+
+@media all and (max-width: 600px) {
+
+  .header-fixed {
+    padding: 20px 0;
+    height: 75px;
+  }
+
+  .header-fixed .header-limiter nav {
+    line-height: 1;
+    float:none;
+  }
+
+  .header-fixed .header-limiter nav a {
+    font-size: 13px;
+  }
+
+  body.fixed .header-fixed {
+    display: none;
+  }
+
+}

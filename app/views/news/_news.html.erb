@@ -1,0 +1,30 @@
+<div class="row">
+  <% news.each do |news| %>
+    <div class="col-lg-4 col-md-6">
+      <%= link_to news_path(news) do %>
+        <div class="inner-item">
+          <div class="panel panel-default">
+            <div class="panel-heading" style="background-image: url('<%= asset_path(news.avatar_url) %>');">
+            </div>
+            <div class="panel-body">
+              <%= content_tag(:span, news.title, class: 'title') %>
+              <%= content_tag(:p, truncate(strip_tags(news.content), length: 120, separator: ' '), class: 'content') %>
+              <div class="tags">
+                <% news.tags.each do |tag| %>
+                  <span class="label label-default"><%= tag.name %></span>
+                <% end %>
+              </div>
+              <div class="date"><%= (news.publication_date||news.updated_at).strftime("%d/%m") %></div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<% if pagination_enabled %>
+  <div class="text-center">
+    <%= paginate news %>
+  </div>
+<% end %>

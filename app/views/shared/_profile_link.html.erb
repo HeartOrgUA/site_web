@@ -1,0 +1,17 @@
+<div class="profile-menu-container">
+  <nav class="menu">
+    <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open"/>
+    <label class="menu-open-button" for="menu-open">
+      <%= image_tag current_user.avatar_url %>
+    </label>
+
+    <%= link_to edit_user_registration_path, class: 'menu-item' do %>
+      <i class="fa fa-user"></i>
+    <% end %>
+    <a href="#" class="menu-item"> <i class="fa fa-plus"></i> </a>
+    <%= link_to destroy_user_session_path, class: 'menu-item', method: :delete do %>
+      <i class="fa fa-sign-out"></i>
+    <% end %>
+
+  </nav>
+</div>

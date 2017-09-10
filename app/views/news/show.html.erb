@@ -1,0 +1,33 @@
+<div id="main-content">
+  <div class="news show">
+
+    <section class="back">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6">
+            <%= link_to t('back_to_news'), news_index_path %>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="white-section">
+      <div class="container">
+        <div class="h1 text-center"><%= @news.title %></div>
+        <div class="text-center">
+          <div class="tags">
+            <% @news.tags.each do |tag| %>
+              <span class="label label-default"><%= tag.name %></span>
+            <% end %>
+          </div>
+        </div>
+        <p class="content">
+          <%= @news.content.html_safe %>
+        </p>
+      </div>
+    </section>
+
+    <%= render 'shared/news_form' %>
+
+  </div>
+</div>

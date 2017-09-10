@@ -1,0 +1,31 @@
+<nav class="navbar navbar-default">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <div type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-collapse" aria-expanded="false">
+      <span class="sr-only">Toggle navigation</span>
+      <div class="spinner-master">
+        <input type="checkbox" id="spinner-form" />
+        <label for="spinner-form" class="spinner-spin">
+          <div class="spinner diagonal part-1"></div>
+          <div class="spinner horizontal"></div>
+          <div class="spinner diagonal part-2"></div>
+        </label>
+      </div>
+    </div>
+    <%= link_to image_tag('logo.png'), root_path %>
+  </div>
+
+  <div class="collapse navbar-collapse" id="header-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li><%= link_to t('main_page'), root_path, class: active_link(root_path) %></li>
+      <li><%= link_to t('about_us'), about_path, class: active_link(about_path) %></li>
+      <li><%= link_to t('projects'), projects_path, class: active_link(projects_path) %></li>
+      <li><%= link_to t('news'), news_index_path, class: active_link(news_index_path) %></li>
+      <li><%= link_to t('trenings'), trainings_path, class: active_link(trainings_path) %></li>
+      <li><%= link_to t('volonteer'), volonteer_path, class: active_link(volonteer_path) %></li>
+      <li><%= link_to t('your_health'), your_health_path, class: active_link(your_health_path) %></li>
+      <li><%= link_to t('contacts'), contacts_path, class: active_link(contacts_path) %></li>
+      <li class="lightred-back"><%= link_to t('help'), donate_path, class: active_link(donate_path) %></li>
+    </ul>
+  </div>
+</nav>

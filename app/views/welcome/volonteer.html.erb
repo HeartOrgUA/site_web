@@ -1,0 +1,72 @@
+<div id="main-content">
+  <div class="welcome volonteer">
+
+    <section class="white-section">
+      <div class="container">
+        <div class="col-sm-12">
+          <div class="h2"><%= t('join_the_team') %></div>
+        </div>
+        <div class="col-sm-6">
+          <%= content_tag :div, t('get_over_here_html'), class: 'deepgrey-color margin-t-20' %>
+        </div>
+      </div>
+    </section>
+
+    <section class="white-section collection">
+      <div class="container">
+        <div class="col-sm-12 margin-b-20">
+          <div class="h2"><%= t('we_are_looking_for') %></div>
+        </div>
+        <% @vacancies.each do |vacancy| %>
+          <div class="col-md-6 col-sm-12">
+            <div class="inner-item">
+              <div class="panel panel-default">
+                <div class="panel-heading text-center" style="background-image: url('<%= vacancy.image.url %>');">
+                  <div class="dimmer"></div>
+                  <div class="tabl">
+                    <div>
+                      <div>
+                        <%= content_tag(:span, vacancy.name, class: 'name') %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel-body vac">
+                  <%= content_tag(:p, vacancy.short_description, class: 'vacancy-description') %>
+                  <div class="vacancy-info"><%= link_to t('learn_more'), "#vac_#{vacancy.id}" %></div>
+                  <div class="vacancy-submit">
+                    <%= link_to t('join'), '#volunteer-modal', class: 'btnn btnn-rounded btnn-lightred-void text-uppercase',
+                        data: { turbolinks: false }, "uk-toggle" => true %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="container">
+        <div class="col-sm-6">
+          <%= content_tag :div, t('we_glad_to_meet_html'), class: 'deepgrey-color' %>
+        </div>
+      </div>
+    </section>
+
+    <section class="grey-section">
+      <div class="container">
+        <% @vacancies.each do |vacancy| %>
+          <div class="col-sm-12 white-section margin-b-20 padding-sides-50" id="vac_<%= vacancy.id %>">
+            <div class="h3 margin-b-20"><%= vacancy.name %></div>
+            <%= content_tag :p, vacancy.description, class: 'margin-b-20' %>
+            <%= link_to t('join'), '#volunteer-modal', class: 'btnn btnn-rounded btnn-lightred-void text-uppercase',
+                data: { turbolinks: false }, "uk-toggle" => true %>
+          </div>
+        <% end %>
+      </div>
+    </section>
+
+    <%= render 'shared/news_form' %>
+
+  </div>
+</div>
+
+<%= render 'volunteers/volunteer_modal' %>

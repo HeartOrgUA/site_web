@@ -1,0 +1,11 @@
+<div id="checkbox-filters">
+  <%= form_tag news_index_path, method: :get, remote: true do %>
+    <span class="filter-reseter"><%= t('all') %></span>
+    <% @tags.each do |tag| %>
+       <label>
+          <%= check_box_tag "tags[]", tag.name, params[:tags].present? ? params[:tags].include?(tag.name) : false %>
+          <span><%= tag.name %></span>
+       </label>
+    <% end %>
+  <% end %>
+</div>

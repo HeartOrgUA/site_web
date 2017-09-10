@@ -1,0 +1,58 @@
+<div id="main-content">
+  <div class="trainings index">
+
+    <section class="white-section">
+      <div class="container">
+        <div class="col-md-6">
+          <div class="h2"><%= t('trainings_and_certs') %></div>
+          <p class="deepgrey-color"><%= t('training_proposal_html') %></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="grey-section">
+      <div class="container">
+        <div class="col-sm-12">
+          <div class="h4 lightgrey-color"><%= t('base_trainings') %></div>
+        </div>
+
+        <div class="collection">
+          <% @trainings.each do |training| %>
+            <div class="col-md-6">
+              <%= link_to training do %>
+                <div class="inner-item">
+                  <div class="panel panel-default">
+                    <div class="panel-body training">
+                      <div class="h4 text-uppercase training-name"><%= training.name %></div>
+                      <div class="duration">
+                        <%= content_tag :span, "#{t('duration')}: " %>
+                        <div><%= "#{training.duration} #{t('hrs')}" %></div>
+                      </div>
+                      <div class="prerequisites">
+                        <%= content_tag :span, "#{t('prerequisites')}:" %>
+                        <div><%= t(training.prerequisite) %></div>
+                      </div>
+                      <div class="instructors">
+                        <%= content_tag :span, "#{t('instructors')}:" %>
+                        <% training.users.each do |user| %>
+                          <%= content_tag :div, full_name_with_rank(user) %>
+                        <% end %>
+                      </div>
+                    </div>
+                    <div class="panel-footer text-center">
+                      <%= "#{t('we_are_inviting')} #{l(training.start_date, format: :short)}" %>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+
+      </div>
+    </section>
+
+    <%= render 'shared/news_form' %>
+
+  </div>
+</section>

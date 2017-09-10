@@ -1,0 +1,7 @@
+<% if @volunteer.valid? %>
+  noty({text: 'Заявка на волонтерство принята! Данные отправлены на ваш имейл', type: 'information'});
+  $('.modals .form-group input').val('');
+  UIkit.modal('.modals')[0].hide();
+<% else %>
+  noty({text: 'Ошибка подачи заявки', type: 'warning'})
+<% end %>

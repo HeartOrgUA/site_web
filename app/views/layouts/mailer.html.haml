@@ -1,0 +1,17 @@
+%hmtl
+  %head
+    %meta{ "http-equiv" => "Content-Type", "content" => "text/html; charset=utf-8" }
+    %meta{ "name" => "viewport", "content" => "width=device-width, initial-scale=1.0, maximum-scale=1.0" }
+    %meta{ "name" => "format-detection", "content" => "telephone=no" }
+  %body{ "bgcolor" => "#ffffff", "text" => "#506170" }
+    %style{ "type" => "text/css" }
+      body, table {font-family:'Lucida Grande','Segoe UI',Arial,Verdana,'Lucida Sans Unicode',Tahoma,Sans-Serif;}
+      body {background-color: #ffffff}
+      a:focus, a:hover, a:active {outline: none }
+      img {border-style: none}
+      @media only screen and (max-width: 649px) {
+      table[class=table650]{ width: 100% !important; }
+      td[class=td45]{ width: 15px !important; }
+      td[class=header-responsive]{ display: block; text-align: left; } }
+
+    = yield

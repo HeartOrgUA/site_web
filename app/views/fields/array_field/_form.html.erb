@@ -1,0 +1,12 @@
+<div class="field-unit__label">
+  <%= f.label field.attribute %>
+</div>
+<div class="field-unit__field">
+  <% field.stored_array.each do |characteristic| %>
+    <div>
+      <%= text_field_tag "aed_model[#{field.name}][]", characteristic, style: 'width: 90%; display: inline-block; margin-bottom: 10px;' %>
+      <span class="fa fa-minus remove-characteristic"></span>
+    </div>
+  <% end %>
+  <span class="fa fa-plus add-characteristic"></span>
+</div>

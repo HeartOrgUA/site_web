@@ -1,0 +1,11 @@
+.field-unit--array-field {
+  align-items: inherit !important;
+}
+
+.add-characteristic, .remove-characteristic {
+  cursor: pointer;
+}
+
+.field-unit--ckeditor-field .field-unit__field {
+  width: 80%;
+}

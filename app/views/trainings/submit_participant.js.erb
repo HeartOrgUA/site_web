@@ -1,0 +1,6 @@
+<% if @training_outputs.valid? %>
+  noty({text: '<%= t("participation_added") %>', type: 'success' });
+  $('.training-form input[type="text"], .training-form input[type="email"]').val('');
+<% else %>
+  noty({text: '<%= t("participation_submission_failed") %>', type: 'warning' });
+<% end %>

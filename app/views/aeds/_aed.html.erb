@@ -1,0 +1,58 @@
+<table class="table">
+  <tbody class="aed-obj-wrapper">
+    <% @aeds.each do |aed| %>
+      <tr class="top-row">
+        <td class="aed-img-wrapper" rowspan="2">
+          <%= image_tag aed.avatar %>
+        </td>
+        <td>
+          <%= aed.location_type %>
+        </td>
+        <td>
+          <%= aed.address %>
+          <div class="highlighted"><%= "м. #{aed.city}, #{aed.area}" %></div>
+        </td>
+        <td>
+          <%= aed.description %>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="highlighted">ID AED</div>
+          <%= aed.id %>
+        </td>
+        <td>
+          <div class="highlighted"><%= t('owner') %></div>
+          <%= aed.owner %>
+        </td>
+        <td>
+          <div class="highlighted"><%= t('coordinator_contacts') %></div>
+          <%= aed.phone %><br>
+          <%= aed.email %>
+        </td>
+      </tr>
+
+      <tr class="row-invisible">
+        <td>
+          <div class="highlighted">
+            <%= aed.aed_model&.name %><br>
+            <% if aed.aed_model&.characteristics.present? %>
+              <% aed.aed_model.characteristics.each do |characteristic| %>
+                <%= characteristic %><br>
+              <% end %>
+            <% end %>
+          </div>
+        </td>
+        <td colspan="3" class="text-right">
+          <span class="availability"><%= aed.availability %></span>
+          <% if aed.active? %>
+            <div class="btnn btnn-green"><%= t('active') %></div>
+          <% else %>
+            <div class="btnn btnn-grey"><%= t('waiting') %></div>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

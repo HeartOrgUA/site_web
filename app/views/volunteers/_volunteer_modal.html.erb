@@ -1,0 +1,32 @@
+<div id="volunteer-modal" class="modals" uk-modal>
+  <div class="uk-modal-dialog uk-modal-body">
+    <button class="uk-modal-close-outside" type="button" uk-close></button>
+    <h2 class="uk-modal-title"><%= t('form_to_submit_volunteer') %></h2>
+    <div class="form-wrapper">
+      <%= form_tag volunteers_path, remote: true do %>
+        <%= fields_for :volunteer do |f| %>
+
+          <div class="form-group">
+            <%= f.text_field :name, placeholder: t('first_name'), class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.text_field :last_name, placeholder: t('last_name'), class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.email_field :email, placeholder: t('email'), class: 'form-control' %>
+          </div>
+
+        <% end %>
+
+        <div class="actions text-center">
+          <%= submit_tag t('submit'), class: 'btnn btnn-red text-uppercase' %>
+        </div>
+
+      <% end %>
+
+    </div>
+
+  </div>
+</div>

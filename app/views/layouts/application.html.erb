@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+  <title>Ukrainian Heart Association</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
+  <%= csrf_meta_tags %>
+  <meta name="google-site-verification" content="5JDPztsChKk8QFV-49veoyRrZ08y3zYutHo0OmEY7q8" />
+  <meta name="viewport" content="width=device-width">
+  <meta property="og:image" content="<%= image_url('logo.png') %>" />
+
+  <!-- NEED TO TRANSFER IT TO GEM -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.12/css/uikit.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.12/js/uikit.min.js"></script>
+
+</head>
+<body>
+
+<%= render 'application/header' %>
+
+<%= yield %>
+
+<%= render 'application/footer' %>
+<%= render 'application/ga' %>
+<%= render 'shared/profile_link' if user_signed_in? %>
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+<% if @subscriber.valid? %>
+  noty({text: 'Вы успешно подписались на нашу рассылку', type: 'information'});
+<% else %>
+  noty({text: 'Ошибка подписки на рассылку', type: 'warning'})
+<% end %>

@@ -1,0 +1,90 @@
+<div id="main-content">
+  <div class="trainings show">
+    <% unless @training.images.blank? %>
+      <div class="gallery">
+        <% @training.images.each do |image| %>
+          <%= link_to image_tag(image.url, class: "#{'desaturate' if @training.in_progress?}"), '#' %>
+        <% end %>
+      </div>
+    <% end %>
+
+    <section class="white-section training-info dashed-container">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="h1"><%= @training.name %></div>
+
+            <div class="margin-t-20">
+              <span class="grey-color"><%= t('duration') %>:</span>
+              <span class="text-semibold"><%= "#{@training.duration} #{t('hrs')}" %></span>
+            </div>
+
+            <div class="margin-t-20">
+              <span class="grey-color"><%= t('prerequisites') %>:</span>
+              <div><span class="text-semibold"><%= t(@training.prerequisite) %></span></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="white-section dashed-container">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 grey-color">
+            <%= @training.description %>
+          </div>
+          <div class="col-sm-6">
+            <% @training.users.each do |user| %>
+              <div class="row user-container">
+                <div class="col-xs-3">
+                  <%= image_tag user.avatar_url, class: 'user-avatar' %>
+                </div>
+                <div class="col-xs-9">
+                  <span class="first_name"><%= user.first_name %></span>
+                  <span class="last_name"><%= user.last_name %></span>
+                  <span class="user-info grey-color"><%= user.bio %></span>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="h2 text-center"><%= t('submit_to_training') %></div>
+          <div class="col-sm-offset-3 col-sm-6">
+            <%= form_tag submit_participant_training_path(@training), remote: true, class: 'training-form' do %>
+              <%= fields_for :user do |f| %>
+                <div class="form-group">
+                  <%= f.label :first_name %>
+                  <%= f.text_field :first_name, class: 'form-control' %>
+                </div>
+                <div class="form-group">
+                  <%= f.label :last_name %>
+                  <%= f.text_field :last_name, class: 'form-control' %>
+                </div>
+                <div class="form-group">
+                  <%= f.label :email %>
+                  <%= f.email_field :email, class: 'form-control' %>
+                </div>
+                <div class="form-group">
+                  <%= f.label :phone %>
+                  <%= f.text_field :phone, class: 'form-control' %>
+                </div>
+
+                <div class="form-group text-center">
+                  <%= f.submit t('sign_up'), class: 'btnn btnn-red' %>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

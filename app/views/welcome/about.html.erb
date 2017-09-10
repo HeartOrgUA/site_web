@@ -1,0 +1,229 @@
+<div id="main-content">
+  <div class="welcome about">
+
+    <section class="white-section">
+      <div class="container">
+        <div class="col-sm-12">
+          <%= content_tag :span, "#{t('who_we_are')}?", class: 'btnn btnn-red margin-b-20' %>
+          <p></p>
+          <div class="h2"><%= t('who_we_are_intro_html') %></div>
+          <p></p>
+        </div>
+        <div class="col-sm-6">
+          <div class="deepgrey-color">
+            <%= t('our_aim_1_html') %>
+            <span class="text-semibold"><%= t('our_aim_2') %></span>. <br>
+            <%= t('our_aim_3') %>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="black-section pic-with-man">
+      <div class="container">
+        <div class="col-sm-12">
+          <%= content_tag :span, "#{t('why_we')}?", class: 'btnn btnn-red abs-pseudo-btn' %>
+        </div>
+
+        <p></p>
+
+        <div class="col-sm-6">
+          <div class="bold-statistics bordered"><%= t('twenty_five_to_twenty_five') %></div>
+          <div class="bold-statistics-text"><%= t('twenty_five_to_twenty_five_aim_html') %></div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="col-lg-4 col-md-6 col-sm-6 stat-container-1">
+          <div class="bold-statistics bottom bordered"><%= t('first_place') %></div>
+          <div class="bold-statistics-text"><%= t('first_place_aim_html') %></div>
+        </div>
+        <div class="col-lg-5 col-md-6 col-sm-6 stat-container-2">
+          <div class="bold-statistics bottom bordered">1233</div>
+          <div class="bold-statistics-text"><%= t('everyday_reaped_html') %></div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="color-stat-container">
+            <div class="bold-statistics">31%</div>
+            <div class="bold-statistics-text"><%= t('worldwide_partial_deaths') %></div>
+          </div>
+        </div>
+        <div class="col-lg-5 col-md-6 col-sm-12">
+          <div class="color-stat-container">
+            <div class="bold-statistics">17 000 000</div>
+            <div class="bold-statistics-text"><%= t('worldwide_overall_deaths') %></div>
+          </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="col-sm-12">
+          <div class="asterisk-describe">
+            <ul class="list-unstyled">
+              <li>* - <%= t('cvd') %></li>
+              <li>** - <%= t('comparable_to_other_deaseses') %></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="white-section what-do-we-do-section">
+      <div class="container">
+        <div class="col-sm-12">
+          <%= content_tag :span, "#{t('what_do_we_do')}?", class: 'btnn btnn-red abs-pseudo-btn' %>
+        </div>
+
+        <p></p>
+
+        <div class="col-sm-6">
+          <div class="h3"><%= t('we_beleive_html') %></div>
+          <div class="margin-t-20">
+            <%= t('thats_why_main_aim_1') %>
+            <span class="text-semibold"><%= t('thats_why_main_aim_2') %></span>.
+            <%= t('thats_why_main_aim_3') %>
+          </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="col-sm-6">
+          <div class="what-do-we-do-wrapper">
+            <div class="dimmer"></div>
+            <table class="what-do-we-do what-do-we-do-1">
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td><%= t('what_do_we_do_1_html') %></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="what-do-we-do-wrapper">
+            <div class="dimmer"></div>
+            <table class="what-do-we-do what-do-we-do-2">
+              <tbody>
+                <tr>
+                  <td>2</td>
+                  <td><%= t('what_do_we_do_2_html') %></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="what-do-we-do-wrapper">
+            <div class="dimmer"></div>
+            <table class="what-do-we-do what-do-we-do-3">
+              <tbody>
+                <tr>
+                  <td>3</td>
+                  <td><%= t('what_do_we_do_3_html') %></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="what-do-we-do-wrapper">
+            <div class="dimmer"></div>
+            <table class="what-do-we-do what-do-we-do-4">
+              <tbody>
+                <tr>
+                  <td>4</td>
+                  <td><%= t('what_do_we_do_4_html') %></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="white-section">
+      <div class="container">
+        <div class="col-sm-12">
+          <%= content_tag :span, "#{t('who_is_working')}?", class: 'btnn btnn-red' %>
+        </div>
+
+        <p></p>
+
+        <div class="col-sm-6">
+          <div class="h3 margin-t-20"><%= t('expert_collegium') %></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grey-section shortened dynamic" data-height="100">
+      <div class="fluid-container">
+        <% @users.expert.each_with_index do |user, index| %>
+          <div class="col-sm-4 user-wrapper">
+            <div class="photo">
+              <%= image_tag user.avatar_url %>
+            </div>
+            <div class="name">
+              <div class="h4"><%= "#{user.first_name} #{user.middle_name}" %></div>
+              <div class="h3"><%= user.last_name %></div>
+            </div>
+            <div class="bio">
+              <%= user.bio %>
+            </div>
+          </div>
+          <% if (index+1)%3 == 0 %>
+            <div class="clearfix"></div>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="clearfix"></div>
+    </section>
+
+    <section class="white-section">
+      <div class="container">
+        <div class="col-sm-12">
+          <div class="h3 margin-t-20"><%= t('our_team') %></div>
+        </div>
+      </div>
+
+      <div class="clearfix"></div>
+    </section>
+
+    <section class="grey-section shortened dynamic" data-height="100">
+      <div class="container">
+        <% @users.staff.each_with_index do |user, index| %>
+          <div class="col-md-4 col-sm-6 user-wrapper-centered">
+            <div class="photo text-center">
+              <%= image_tag user.avatar_url %>
+            </div>
+            <div class="name">
+              <div class="h4 text-center"><%= user.first_name %></div>
+              <div class="h3 text-center"><%= user.last_name %></div>
+            </div>
+            <div class="bio text-center">
+              <%= t(user.position) %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="clearfix"></div>
+    </section>
+
+    <section class="white-section longered">
+      <div class="container">
+        <div class="col-sm-6">
+          <div class="h3">
+            <%= t('we_are_working_for_you_html') %>
+            <span class="lightred-color"><%= t('live_metters') %></span>
+          </h3>
+        </div>
+      </div>
+    </section>
+
+    <%= render 'shared/news_form' %>
+
+  </div>
+</div>

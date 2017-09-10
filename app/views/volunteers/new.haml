@@ -1,0 +1,30 @@
+#main-content.volunteer
+  .container-fluid
+    .row
+      .padding-0-sides
+        .image-wrapper
+          = image_tag('rc2.jpg')
+          .custom-carousel-text.custom-text-center
+            %h5 Нам нужны волонтёры
+            %h6 Присоеденяйтесь к нам, заполнив форму ниже
+      .padding-10-tops.text-center
+        %h3 Что делают волонтеры
+        .col-sm-offset-3.col-sm-6.text-justify
+          %h5 Je obecně známou věcí, že člověk bývá při zkoumání grafického návrhu rozptylován okolním textem, pokud mu dává nějaký smysl. Úkolem Lorem Ipsum je pak nahradit klasický smysluplný text vhodnou bezvýznamovou alternativou s relativně běžným rozložením slov. To jej dělá narozdíl od opakujícího se "Tady bude text. Tady bude text..." mnohem více čitelnějším. V dnešní době je Lorem Ipsum používáno spoustou DTP balíků a webových editorů coby výchozí model výplňového textu. Ostatně si zkuste zadat frázi "lorem ipsum" do vyhledavače a sami uvidíte. Během let se objevily různé varianty a odvozeniny od klasického Lorem Ipsum, někdy náhodou, někdy účelně (např. pro pobavení čtenáře).
+        .clearfix
+
+        %h3 Цитаты волонтеров
+        .col-sm-offset-3.col-sm-6.text-justify
+          %h5 Je obecně známou věcí, že člověk bývá při zkoumání grafického návrhu rozptylován okolním textem, pokud mu dává nějaký smysl. Úkolem Lorem Ipsum je pak nahradit klasický smysluplný text vhodnou bezvýznamovou alternativou s relativně běžným rozložením slov. To jej dělá narozdíl od opakujícího se "Tady bude text. Tady bude text..." mnohem více čitelnějším. V dnešní době je Lorem Ipsum používáno spoustou DTP balíků a webových editorů coby výchozí model výplňového textu. Ostatně si zkuste zadat frázi "lorem ipsum" do vyhledavače a sami uvidíte. Během let se objevily různé varianty a odvozeniny od klasického Lorem Ipsum, někdy náhodou, někdy účelně (např. pro pobavení čtenáře).
+        .clearfix
+
+        %h3 Как стать волонтером
+        .col-sm-offset-3.col-sm-6.text-justify
+          %h5 Je obecně známou věcí, že člověk bývá při zkoumání grafického návrhu rozptylován okolním textem, pokud mu dává nějaký smysl. Úkolem Lorem Ipsum je pak nahradit klasický smysluplný text vhodnou bezvýznamovou alternativou s relativně běžným rozložením slov. To jej dělá narozdíl od opakujícího se "Tady bude text. Tady bude text..." mnohem více čitelnějším. V dnešní době je Lorem Ipsum používáno spoustou DTP balíků a webových editorů coby výchozí model výplňového textu. Ostatně si zkuste zadat frázi "lorem ipsum" do vyhledavače a sami uvidíte. Během let se objevily různé varianty a odvozeniny od klasického Lorem Ipsum, někdy náhodou, někdy účelně (např. pro pobavení čtenáře).
+        .clearfix
+
+        .col-sm-offset-3.col-sm-6.padding-10-tops
+          = form_for @volunteer, remote: true do |f|
+            = f.text_field :name, placeholder: 'Имя', class: 'full-width-input'
+            = f.email_field :email, placeholder: 'Email', class: 'full-width-input'
+            = f.submit 'Стать волонтёром', class: 'full-width-input btn-custom-normal'

@@ -1,0 +1,92 @@
+<div id="main-content">
+  <div class="aeds index">
+
+    <section class="grey-section">
+      <div class="h2 text-center"><%= t('aed_list') %></div>
+      <div class="container-fluid">
+        <div class="row margin-t-20">
+          <div class="col-sm-6 aed-list">
+            <%= render 'aed', aeds: @aeds %>
+          </div>
+          <div class="col-sm-6 aed-map">
+            <div id="map"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <% if user_signed_in? %>
+      <section class="white-section">
+        <div class="h3 text-center"><%= t('add_aed') %></div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-offset-3 col-sm-6">
+              <%= form_for @aed do |f| %>
+                <div class="form-group">
+                  <%= f.label :name %>
+                  <%= f.text_field :name, class: 'form-control', placeholder: t('org_where_aed_is') %>
+                </div>
+                <div class="form-group">
+                  <%= f.label :area %>
+                  <%= f.text_field :area, class: 'form-control', placeholder: t('area') %>
+                </div>
+                <div class="form-group">
+                  <%= f.label :city %>
+                  <%= f.text_field :city, class: 'form-control', placeholder: t('city') %>
+                </div>
+                <div class="form-group">
+                  <%= f.label :district %>
+                  <%= f.text_field :district, class: 'form-control', placeholder: t('district') %>
+                </div>
+                <div class="form-group">
+                  <%= f.label :address %>
+                  <%= f.text_field :address, class: 'form-control', placeholder: t('address') %>
+                </div>
+                <div class="form-group">
+                  <%= f.label :phone %>
+                  <%= f.text_field :phone, class: 'form-control', placeholder: '+380XXXXXXXXX' %>
+                </div>
+                <div class="form-group">
+                  <%= f.label :email %>
+                  <%= f.text_field :email, class: 'form-control', placeholder: 'example@gmail.com' %>
+                </div>
+                <div class="form-group">
+                  <%= f.label :lonlat, t('coords') %><br>
+                  <%= f.text_field :lonlat, class: 'form-control', style: 'width: 90%; display: inline-block;',
+                      placeholder: t('lnglat_format') %>
+                  <i class="fa fa-refresh get-coords has-success"></i>
+                </div>
+                <div class="form-group">
+                  <%= f.label :images %>
+                  <%= f.file_field :images, multiple: true %>
+                </div>
+                <div class="form-group">
+                  <%= f.label :location_type %>
+                  <%= f.select :location_type, @location_types, {}, class: 'form-control' %>
+                </div>
+                <div class="form-group">
+                  <%= f.label :description %>
+                  <%= f.text_area :description, class: 'form-control', placeholder: t('description') %>
+                </div>
+                <div class="form-group">
+                  <%= f.label :aed_model_id %>
+                  <%= f.select :aed_model_id, @aed_models, {}, class: 'form-control' %>
+                </div>
+
+                <div class="form-group">
+                  <%= f.submit t('add_aed'), class: 'btnn btnn-deepred' %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </section>
+    <% end %>
+
+    <%= render 'shared/news_form' %>
+
+  </div>
+</div>
+
+<%= render 'shared/google_maps_script' %>
