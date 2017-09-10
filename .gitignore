@@ -28,3 +28,6 @@
 # /app/assets/images/*
 # /app/assets/javascripts/*
 # /app/assets/stylesheets/*
+
+# Ignore application configuration
+/config/application.yml

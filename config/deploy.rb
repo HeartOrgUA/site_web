@@ -5,7 +5,7 @@ set :application, 'health_app'
 set :repo_url, 'git@github.com:HeartOrgUA/site_web.git'
 
 set :deploy_to, '/home/deployer/health_app'
-
+append :linked_files, 'config/application.yml'
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads'
 
 
