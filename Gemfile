@@ -29,6 +29,13 @@ gem 'kaminari'
 gem 'rufus-scheduler'
 gem 'ckeditor'
 
+gem 'capistrano', '~> 3.7', '>= 3.7.1'
+gem 'capistrano-rails', '~> 1.2'
+gem 'capistrano-passenger', '~> 0.2.0'
+# Add this if you're using rbenv
+gem 'capistrano-rbenv', '~> 2.1'
+gem 'capistrano-bundler', '~> 1.2'
+
 source 'https://rails-assets.org/' do
   gem 'rails-assets-select2'
   gem 'rails-assets-OwlCarousel2'

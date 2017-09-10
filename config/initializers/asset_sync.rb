@@ -1,6 +1,6 @@
 AssetSync.configure do |config|
   config.fog_provider = 'AWS'
-  config.fog_directory = 'prodhealthappstaticassets'
+  config.fog_directory = ENV['S3_BUCKET']
   config.aws_access_key_id = ENV['S3_ID']
   config.aws_secret_access_key = ENV['S3_KEY']
 
