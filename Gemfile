@@ -27,7 +27,7 @@ gem 'mini_magick'
 gem 'active_interaction', '~> 3.4'
 gem 'kaminari'
 gem 'rufus-scheduler'
-gem 'ckeditor'
+gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'figaro'
 
 gem 'capistrano', '~> 3.7', '>= 3.7.1'
