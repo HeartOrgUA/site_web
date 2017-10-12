@@ -1,4 +1,6 @@
+//= require_self
 //= require select2
-//= require noty
 //= require ckeditor/init
+//= require noty
 //= require_tree .
+CKEDITOR_BASEPATH = '/assets/ckeditor/';
