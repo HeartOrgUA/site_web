@@ -22,5 +22,6 @@ class WelcomeController < ApplicationController
 
   def subscribe
     @subscriber = NewsSubscribe.create(email: params[:email])
+    redirect_to :back
   end
 end
