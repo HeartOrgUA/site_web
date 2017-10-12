@@ -204,7 +204,7 @@ ua:
   description: Детальний опис місцезнаходження
   owner: Власник
   coordinator_contacts: Контакти координатора
-  your_health: Твоє здоров`я
+  your_health: Знай свої цифри
   your_health_description_html: Пропонуємо виміряти Ваш індекс маси тіла
   mass: Маса
   mass_kg: Маса (у кілограмах)
